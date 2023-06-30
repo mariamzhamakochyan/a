@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linux Emulator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="desktop">
+        <div class="top-bar">
+            <div class="system-time">
+                <p>{{ current_time() }}</p>  
+            </div>
+        </div>
+        <div class="desktop-photo">
+            <img src="static/desktop-background.jpg" alt="Desktop Photo" />
+        </div>
+
+        <div class="taskbar">
+            <div class="start-button"></div>
+            <div class="taskbar-icons">
+            </div>
+        </div>
+
+        <div class="desktop-icons">
+            <div class="desktop-icon" onclick="openTerminal()">
+                <img src="{{ url_for('static', filename='terminal.png') }}" alt="Terminal" />
+                <p>Terminal</p>
+            </div>
+            <div class="desktop-icon" onclick="openMozilla()">
+                <img src="{{ url_for('static', filename='firefox_mozilla_browser.png') }}" alt="Firefox" />
+                <p>Firefox</p>
+            </div>
+            <div class="desktop-icon" onclick="openFolder('home')">
+                <img src="{{ url_for('static', filename='folder.png') }}" alt="Home" />
+                <p>Home</p>
+            </div>
+            <div class="desktop-icon">
+                <img src="{{ url_for('static', filename='recyclebin.png') }}" alt="Trash" />
+                <p>Trash</p>
+            </div>
+        </div>
+    </div>
+    <div id="terminal-window" class="terminal-window">
+        <div class="terminal-header">
+            <span class="terminal-title">Terminal</span>
+            <span class="terminal-full-screen" onclick="toggleFullscreen()">&square;</span>
+            <span class="terminal-close" onclick="closeTerminal()">&times;</span>
+        </div>
+        <div id="terminal-input" class="terminal-input">
+            <span id="terminal-prompt" class="terminal-prompt">studentname@Picsart-Academy ~ $</span>
+            <input id="terminal-command" type="text" placeholder="" onkeypress="handleKeyPress(event)" />
+        </div>
+        <div id="terminal-output" class="terminal-output"></div>
+    </div>
+
+
+    <div id="folder-window" class="folder-window">
+        <div class="folder-header">
+            <span class="folder-title">Folder</span>
+            <span class="folder-close" onclick="closeFolder()">&times;</span>
+        </div>
+        <div id="folder-content" class="folder-content">
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='terminal.js') }}"></script>
+</body>
+</html>
