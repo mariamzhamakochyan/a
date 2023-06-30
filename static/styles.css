@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.desktop {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-bar {
+    background-color: #000;
+    height: 30px;
+    width: 99.3%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #fff;
+    padding-right: 10px;
+    border-bottom: none;
+}
+
+.taskbar-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.desktop-photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.desktop-photo img {
+    max-height: 110%;
+    max-width: 110%;
+}
+
+.desktop-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 80px;
+    margin-right: 80%;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+.desktop-icon img {
+    height: 60px;
+    width: 60px;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 90px;
+
+    margin: 10px;
+    cursor: pointer;
+}
+
+.desktop-icon p {
+    margin: 0;
+}
+
+.system-time {
+    margin-left: auto;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.system-time p {
+    margin: 0;
+}
+
+.terminal-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    background-color: #000;
+    border-bottom: 1px solid #fff;
+}
+
+.terminal-title {
+    color: #fff;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.terminal-close {
+    color: #fff;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.terminal-output {
+    flex-grow: 1;
+    width: 100%;
+    padding: 5px;
+    font-family: monospace;
+    color: #fff;
+    overflow-y: scroll;
+    height: calc(100% - 50px);
+}
+
+.terminal-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    box-sizing: border-box;
+    border-top: 1px solid #fff;
+}
+
+.terminal-prompt {
+    color: #0f0;
+    margin-right: 5px;
+}
+
+.terminal-input input {
+    flex-grow: 1;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: monospace;
+}
+
+.terminal-input input::placeholder {
+    color: #777;
+}
+
+button {
+    margin-left: 5px;
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    background-color: #000;
+    border-bottom: 1px solid #fff;
+    position: relative;
+}
+
+.terminal-title {
+    color: #fff;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.terminal-close {
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.terminal-full-screen {
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.folder-window {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+}
+
+.folder-header {
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #cccccc;
+    cursor: move;
+}
+
+.folder-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.folder-close {
+    float: right;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.folder-content {
+    padding: 10px;
+    height: 340px;
+    overflow-y: auto;
+}
+
+.folder-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: default;
+}
+
+.folder-item img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.clickable {
+    cursor: pointer;
+}
